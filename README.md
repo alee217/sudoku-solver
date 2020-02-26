@@ -6,15 +6,15 @@ Solver, for the backtracking implementation.
 
 ### Sudoku
 private fields
-- 
+- grid 9x9 2d array
 
 Constructor
-- Takes in a 2d array
+- Takes in a 9x9 2d array
 
 isValid
 - Takes in a row index and col index
 - Checks whether a cell is valid. Returns true if valid, false otherwise
-- Check row for duplicate, check col for duplicate, check box for duplicate. (Use a HashSet to check for duplicates)
+- Check row for duplicate, check col for duplicate, check region for duplicate. (Use a HashSet to check for duplicates)
 
 toString
 - Override toString to print out the Sudoku class
