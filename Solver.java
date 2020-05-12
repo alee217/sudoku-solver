@@ -15,5 +15,6 @@ public class Solver {
         //System.out.println(Arrays.deepToString(grid));
         Sudoku puzzle = new Sudoku(grid);
         System.out.println(puzzle.toString());
+        System.out.println(puzzle.isValid(0, 0, 3));
     }
 }
