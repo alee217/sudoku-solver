@@ -1,6 +1,6 @@
 # sudoku-solver
-Sudoku solver implemented with recursive backtracking.
-Very interested in implementing this with computer vision libraries
+Sudoku solver implemented with recursive backtracking.     
+Very interested in implementing this with computer vision libraries.      
 The main class is in Solver.java
 
 ## Design Documentation
