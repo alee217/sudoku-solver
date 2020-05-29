@@ -14,6 +14,9 @@ public class Sudoku {
      * Returns false if we'll violate the rule with this set.
      */
     public boolean setCell(int row, int col, int newDigit) {
+        if (row > 8 || col > 8 || newDigit < 1 || newDigit > 9) {
+            throw new IllegalArgumentException();
+        }
         if (isValid(row, col, newDigit)) {
             grid[row][col] = newDigit;
             return true;
@@ -21,8 +24,26 @@ public class Sudoku {
         return false;
     }
 
+    // Clears a cell by setting it to 0
+    public void clearCell(int row, int col) {
+        if (isAClue(row, col)) {
+            throw new IllegalArgumentException();
+        }
+        grid[row][col] = 0;
+    }
+
+    public boolean isAClue(int row, int col)  {
+        if (row > 8 || col > 8) {
+            throw new IllegalArgumentException();
+        }
+        return clueGrid[row][col];
+    }
+
     // Returns whethers a cell is valid.
     public boolean isValid(int row, int col, int newDigit) {
+        if (row > 8 || col > 8 || newDigit < 1 || newDigit > 9) {
+            throw new IllegalArgumentException();
+        }
         if (clueGrid[row][col]) {
             return false;
         }
@@ -46,11 +67,6 @@ public class Sudoku {
             }
         }
         return true;
-    }
-
-    // Checks whether the current board obeys the One Rule i.e. the rule of the game.
-    public boolean isValid() {
-        return false;
     }
 
     // Deep copies a grid.
